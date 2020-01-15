@@ -105,8 +105,8 @@ uninstall remove:
 # Update any Git submodules that are present
 update:
 	@if [ -e ".git" ] ; then \
-	    echo git submodule update --recursive ; \
-	    git submodule update --recursive ; \
+	    echo git submodule update --remote --recursive ; \
+	    git submodule update --remote --recursive ; \
 	fi
 
 clean:
