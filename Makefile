@@ -2,9 +2,9 @@
 # Makefile for shellrc
 #
 
-# Set this to anything other than procuction to do tests in the
+# Set this to anything other than production to do tests in the
 # current directory.
-MODE=test
+MODE=production
 
 
 default: build
