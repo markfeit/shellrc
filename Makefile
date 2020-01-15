@@ -64,7 +64,7 @@ TO_CLEAN += tcshrc-list
 #
 
 RCS := bashrc cshrc tcshrc profile
-build: update $(RCS)
+build: update clean $(RCS)
 TO_CLEAN += $(RCS)
 
 
