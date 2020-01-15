@@ -14,10 +14,21 @@ This works on a system with the following:
 
 ## Setup
 
-Create a new Git repository to hold the new set of snippets.
+Create a Git repository to hold the new set of snippets.  This can be
+local or on GitHub.  In either case, make sure a copy of the new
+repository is cloned and you're in it.
 
-For each Git module containing snippets that you want to be part of
-this installation:
+`git submodule add -b master https://github.com/markfeit/shellrc`
+
+For any additional Git modules containing snippets that you want to be
+part of this installation:
  * `git submodule add -b master GIT-REPO_URL`
+
+`git submodule update --remote --recursive`
+
+`ln -s shellrc/Makefile .`
+
+**NOTE: This last step will overwrite your shell RC FILES.  Preserve a
+  copy first.**
 
 `make install`
