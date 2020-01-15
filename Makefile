@@ -64,7 +64,7 @@ TO_CLEAN += tcshrc-list
 #
 
 RCS := bashrc cshrc tcshrc profile
-build: $(RCS)
+build: update $(RCS)
 TO_CLEAN += $(RCS)
 
 
@@ -101,6 +101,13 @@ uninstall remove:
 #
 # Everything Else
 #
+
+# Update any Git submodules that are present
+update:
+	@if [ -e ".git" ] ; then \
+	    echo git submodule update --recursive ; \
+	    git submodule update --recursive ; \
+	fi
 
 clean:
 	(echo && find . -name "*~") | xargs rm -rf
